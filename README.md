@@ -2,6 +2,8 @@
 
 A multi-page graphic-design portfolio built with Next.js, Tailwind CSS, Framer Motion and Lenis.
 
+**Live site:** https://vanshbajaj-portfolio.vercel.app/
+
 ## Run locally
 
 ```bash
