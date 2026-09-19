@@ -1,0 +1,4 @@
+"use client";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+export default function CurvedTransition(){const ref=useRef(null);const reduced=useReducedMotion();const {scrollYProgress}=useScroll({target:ref,offset:["start end","end start"]});const y=useTransform(scrollYProgress,[0,.55,1],[90,0,-16]);const scaleY=useTransform(scrollYProgress,[0,.5,1],[1.9,1,.85]);return <div ref={ref} className="relative z-20 -mb-px h-36 overflow-hidden bg-cosmic" aria-hidden="true"><motion.svg className="absolute inset-x-0 bottom-[-2px] h-full w-full origin-bottom" style={reduced?undefined:{y,scaleY}} viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="var(--bg)" d="M0 100V58 Q50 -5 100 58V100Z"/><path fill="none" stroke="rgb(var(--text-rgb) / .14)" strokeWidth=".35" d="M0 58 Q50 -5 100 58"/></motion.svg></div>}

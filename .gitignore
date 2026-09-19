@@ -1,0 +1,16 @@
+.vercel
+
+# dependencies and build output
+node_modules
+.next
+
+# raw source material (~3 GB, over GitHub's file-size limit) — the site serves the optimised copies in public/work/
+drive-download-*/
+drive-download-*.zip
+data/0*/
+
+# local / OS junk
+.env*.local
+*.log
+.DS_Store
+._*

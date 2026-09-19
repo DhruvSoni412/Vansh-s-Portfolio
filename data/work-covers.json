@@ -1,0 +1,62 @@
+{
+ "images": {
+  "basil/cover": {
+   "src": "/work/basil/cover.webp",
+   "width": 864,
+   "height": 1080,
+   "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoOABIAPu1iqU2ppaOiMAgBMB2JQBhQA4R83BqwQV9AprQAAP5AIB6gkZL3iQNbd7A9TsO4cMbTr3EpIAwrypBsN+WXyVjPc3joQXWvoOGxjcCD+9YQhy8nLU+5oZQ60jbO/dYlYFp3SjI2psJVmw/T2QEPHnvYygAAAA=="
+  },
+  "clayoven/hero": {
+   "src": "/work/clayoven/hero.webp",
+   "width": 1080,
+   "height": 1350,
+   "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoOABIAPu1iqk2ppaQiMAgBMB2JQBOmUCrAAIjaHS66fVAA/tSf1Y8pf7QmGJPkhHkSszpOSbl6yRMp7YaJOI/X8QvlJ8Q4e80HeS6b7ofPxDU4j3EtyvkQAAA="
+  },
+  "la-isla/hero": {
+   "src": "/work/la-isla/hero.webp",
+   "width": 2000,
+   "height": 2471,
+   "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCgAAAABHyCmIXObXJr4RUQkQ2kkKYwn9m9RDA2iGGSqIKL/s9CVOgs3eG0KVlA4IIgAAABwBACdASoOABEAPu1iqU2ppaOiMAgBMB2JaACdLwFx/H0AKtXJoSjW9b4rAAD+6hQVJQdq6C8fsF5zCINq3ySnt9mx29iPyTu5TJ54Gtoba87boeAW+kIQja3gCd7zdenOyPb73KOvVNi3bpMKuTjWIG2unvRIAwyHH96EQ/zvOTbH0eLfNgAA"
+  },
+  "doh/hero": {
+   "src": "/work/doh/hero.webp",
+   "width": 1080,
+   "height": 1350,
+   "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAwCdASoOABIAPu1iqU2ppaOiMAgBMB2JYgCw7CG6XZ8AQKWzrQ3QAP7u1p74A9TWyu8DyVAW6n2PuiQBmQvjhU5iPe8iCjg54ARaDA9UUjR2msuPbOUmon2ncydjTsvtbNu3J8D/nV3PnAAAAA=="
+  },
+  "rbh/cover": {
+   "src": "/work/rbh/cover.webp",
+   "width": 864,
+   "height": 1080,
+   "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JbAC7Ef/gPdMer7S4e/gT/yAA/uw7s3vp9sMbBgw5jl+8Hg1nj/wRrPGqHN2YO5H91lxvjGxGP3ldrbqA7ZV9LffH0dx8bvYfvqSd3aL2uYURpozbPSykbxvsiUc99KRR3aXlb4XkvAAA"
+  },
+  "reels/cover": {
+   "src": "/work/reels/cover.webp",
+   "width": 1000,
+   "height": 1250,
+   "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JQBOmUCrAAJSPKEUE7j4dkCAA/lReth8XhRBSJ+u5pPHSgTVnERSvFBZQorsjpI3PDhqHuzg55GWqwMj5qN6RZ9Mv6ZcWy+HW51lS/xuOaz044iRgm/DtW5t6ysHVawvfZYa6KTIfdUDyxxFnrxzZM9ChH1JOAAA="
+  },
+  "ai/cover": {
+   "src": "/work/ai/cover.webp",
+   "width": 1000,
+   "height": 1250,
+   "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQBACdASoOABIAPu1iqU2ppaOiMAgBMB2JYwCdMoMYNb/RAAD7ZD3wdfZycIAA/vKrwCsqwYBHVEVEVeP4texEvHCsuQ5hXUtS5HU2y8xAjvLLtbAb49LbjnWEB087m4rT4AAA"
+  },
+  "personal/cover": {
+   "src": "/work/personal/cover.webp",
+   "width": 1000,
+   "height": 1250,
+   "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JbACdMoMYADu8R51p106Vy4mqAAD+6gV85Gg6sPT3wrvJ/VzZPNmGqtl34J8ZbFydtXhwlWa8wJ9tyknh9Rz58t5IvfEVX+ET+axEbXwwQtqlKmvl9MHpuSh+cvcPg6yxWFnqorkCqS7b3OaNtSKV/XRGdxL1vivIt47Dw06OZvxZkAAAAA=="
+  }
+ },
+ "videos": {
+  "preview/cut-to-the-rhythm": {
+   "src": "/work/previews/cut-to-the-rhythm.mp4",
+   "sizeKB": 460
+  },
+  "preview/beyond-the-footage": {
+   "src": "/work/previews/beyond-the-footage.mp4",
+   "sizeKB": 828
+  }
+ }
+}

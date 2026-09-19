@@ -1,0 +1,12 @@
+# Raw source material — the site only serves the optimised copies in public/work/ (built by scripts/build-work-assets.mjs).
+# Keep these out of the upload: they are ~3 GB and not used at runtime.
+drive-download-*/
+drive-download-*.zip
+data/01. Basil/
+data/02. Clayoven/
+data/03. La isla/
+data/04. Doh/
+data/05. RBh/
+data/06. reels/
+data/07. Ai reels/
+data/08. Personal/
