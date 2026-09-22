@@ -23,7 +23,7 @@ export function Eyebrow({ children, className = "" }) {
   return <p className={`font-mono text-[11px] uppercase tracking-[0.2em] text-[color:var(--pj-accent)] md:text-xs ${className}`}>{children}</p>;
 }
 
-/** Display face for headings. Falls back to inherit; Clayoven switches it to Playfair via --pj-font-display. */
+/** Display face for headings. Inherits the site font; a project theme can override it via --pj-font-display. */
 export const displayFont = { fontFamily: "var(--pj-font-display)" };
 
 /** A project image at its natural aspect ratio, with a blur-up placeholder. */

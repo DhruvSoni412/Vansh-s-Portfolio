@@ -84,12 +84,15 @@ const IMAGES = {
   // wide tiles (~2.5:1) are cropped around the artwork; narrow tiles keep the full 16:9 page
   "clayoven/id-logo": { file: slide(2), w: 1500, crop: { x: 0, y: 0.24, w: 0.92, h: 0.615 } },
   "clayoven/id-colours": { file: slide(3), w: 1500 },
-  "clayoven/id-palette": { file: slide(4), w: 1500 },
+  // the raw slide is a full 16:9 deck page (navy bg, "Color Palette" heading, lots of dead air) -> crop down to just the swatch bar
+  "clayoven/id-palette": { file: slide(4), w: 1500, crop: { x: 0.04, y: 0.44, w: 0.92, h: 0.36 } },
   "clayoven/id-type": { file: slide(5), w: 1500, crop: { x: 0, y: 0.28, w: 1, h: 0.684 } },
-  "clayoven/id-tex1": { file: slide(6), w: 1500 },
+  // same deck-page problem, and on white (not navy) bg -> crop past the stamp-shaped swatch (its scalloped edges leave white
+  // slivers against any crop box) to the two plain texture swatches only
+  "clayoven/id-tex1": { file: slide(6), w: 1500, crop: { x: 0.3, y: 0.33, w: 0.64, h: 0.5 } },
   "clayoven/id-tex2": { file: slide(7), w: 1500, crop: { x: 0, y: 0.27, w: 1, h: 0.684 } },
   "clayoven/grid-1": { file: `${C}/03. Social Media/Grid of 9 copy.png`, w: 1800 },
-  "clayoven/grid-2": { file: `${C}/03. Social Media/Clayoven Grid 2 .png`, w: 1800 },
+  "clayoven/grid-2": { file: `${C}/03. Social Media/Main grid 2.png`, w: 1800 },
   "clayoven/vl-dal": { file: `${C}/04. Visual LAnguage/2 2.png`, w: 1080 },
   "clayoven/vl-soya": { file: `${C}/04. Visual LAnguage/2.png`, w: 1080 },
   "clayoven/vl-seekh": { file: `${C}/04. Visual LAnguage/4.png`, w: 1080 },
@@ -102,8 +105,12 @@ const IMAGES = {
   "clayoven/vl-bluerice": { file: `${C}/03. Social Media/Grid of 9 copy.png`, w: 1080, crop: { x: 0.3376, y: 0.3368, w: 0.3249, h: 0.3266 } },
 
   /* ---- 03 La Isla ---- */
-  "la-isla/hero": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
-  "la-isla/grid-2": { file: `${L}/02. THE EVERYFDAY BRND/La Isla Grid 2 V3 .jpg`, w: 2000 },
+  // bottom-left cell of the same "everyday" grid export (cocktail + coffee, "An Invitation to Unwind") -> a clean,
+  // placeholder-free, portrait-friendly single shot for the hero
+  "la-isla/hero": { file: `${L}/02. THE EVERYFDAY BRND/La Isla Grid 2 V3 .jpg`, w: 2000, crop: { x: 0, y: 0.505, w: 0.328, h: 0.485 } },
+  // replaces the old "La Isla Grid 2 V3" export (which had unfinished "Reel Thumbnail" placeholder cells) with a
+  // clean 3x3 grid of finished lifestyle shots
+  "la-isla/grid-2": { file: `${L}/02. THE EVERYFDAY BRND/La Isla Grid 3.webp`, w: 2000 },
   "la-isla/crop-tequila": { file: `${L}/02. THE EVERYFDAY BRND/Generative Fill 2.png`, w: 1080 },
   "la-isla/crop-food": { file: `${L}/02. THE EVERYFDAY BRND/Layer 3.png`, w: 1080 },
   "la-isla/crop-cocktail": { file: `${L}/02. THE EVERYFDAY BRND/Layer 2.png`, w: 1080 },
@@ -128,7 +135,7 @@ const IMAGES = {
   /* ---- 04 Drums of Heaven ---- */
   "doh/hero": { file: `${D}/01. Hero/1.png`, w: 1080 },
   "doh/grid-1": { file: `${D}/02. Social content/Grid 1 copy.png`, w: 1800 },
-  "doh/grid-2": { file: `${D}/02. Social content/Oct Grid Drums of Heaven.jpg`, w: 1500 },
+  "doh/grid-2": { file: `${D}/02. Social content/Oct Grid Drums of Heaven copy.png`, w: 1500 },
   "doh/anniversary": { file: `${D}/03. 31 yesr/31 years of doh .png`, w: 720 },
   "doh/serving": { file: `${D}/03. 31 yesr/Untitled-1 copyv3.png`, w: 1080 },
   "doh/camp-step": { file: `${D}/04. Campaign communication/C 1.png`, w: 1080 },
@@ -179,7 +186,8 @@ const VIDEOS = {
 
 // short silent loops for the hover preview on Work cards
 const PREVIEWS = {
-  "cut-to-the-rhythm": { file: "06. reels/Looks Reel Edit.mp4", start: 0.8, dur: 6 },
+  "nostalgia-reworked": { file: `${C}/05. motion/Cocktail Reel Clayoven.mp4`, start: 1.5, dur: 6 },
+  "cut-to-the-rhythm": { file: "06. reels/Whisky samba interior reel.mp4", start: 1.5, dur: 6 },
   "beyond-the-footage": { file: "07. Ai reels/Elie Saab Ai d2.mp4", start: 0.4, dur: 6 },
 };
 const COVERS_FROM_VIDEO = {

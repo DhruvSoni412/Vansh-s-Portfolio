@@ -28,12 +28,12 @@ const tools = [
 ];
 
 const experience = [
-  ["2026-Now", "SaltnPepper", "CBO, Co-Founder & Creative Project Lead"],
-  ["Aug 2025-Jan 2026", "Social Spork", "Graphic Designer & Social Media Manager"],
-  ["Jun-Jul 2025", "Digital Palmy Inc.", "Graphic Designer & Video Editor"],
-  ["Aug 2024-Jan 2025", "Creator's Commune", "Graphic Designer & Video Editor"],
-  ["Feb-Jul 2024", "Urbankala Enterprise Pvt Ltd", "Social Media Intern"],
-  ["Apr-Sep 2023", "Utopic Network", "Influencer Marketing Intern"],
+  ["2026 to Now", "SaltnPepper", "CBO, Co-Founder & Creative Project Lead"],
+  ["Aug 2025 to Jan 2026", "Social Spork", "Graphic Designer & Social Media Manager"],
+  ["Jun to Jul 2025", "Digital Palmy Inc.", "Graphic Designer & Video Editor"],
+  ["Aug 2024 to Jan 2025", "Creator's Commune", "Graphic Designer & Video Editor"],
+  ["Feb to Jul 2024", "Urbankala Enterprise Pvt Ltd", "Social Media Intern"],
+  ["Apr to Sep 2023", "Utopic Network", "Influencer Marketing Intern"],
 ];
 
 function SectionLabel({ children }) {
@@ -59,9 +59,9 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="space-y-7 text-lg leading-relaxed text-hud-muted md:col-span-6 md:col-start-7 md:text-xl">
-              <p>{`It started with two diplomas in animation and film, and a BCA I was finishing on the side - not exactly the "went to design school" path, but it got me making things. The real shift happened at 19, interning in influencer marketing on campaigns for names like Coke Studio and Amazon. I wasn't leading anything yet, but I was close enough to see how a good visual and a working campaign are the same decision, made twice.`}</p>
-              <p>{"From there it was social media, then video editing, then full creative ownership - Urbankala, Creator's Commune, Digital Palmy, Social Spork - each one handing me more of the actual decision-making, not just execution. By early 2026 I was co-founding saltnpeppr as CBO, running the creative side end to end."}</p>
-              <p>{"That's the shape of it: design first, marketing instinct built in from watching it happen up close - not bolted on after the fact."}</p>
+              <p>{`It started with two diplomas in animation and film, and a BCA I was finishing on the side, not exactly the "went to design school" path, but it got me making things. The real shift happened at 19, interning in influencer marketing on campaigns for names like Coke Studio and Amazon. I wasn't leading anything yet, but I was close enough to see how a good visual and a working campaign are the same decision, made twice.`}</p>
+              <p>{"From there it was social media, then video editing, then full creative ownership (Urbankala, Creator's Commune, Digital Palmy, Social Spork), each one handing me more of the actual decision-making, not just execution. By early 2026 I was co-founding saltnpeppr as CBO, running the creative side end to end."}</p>
+              <p>{"That's the shape of it: design first, marketing instinct built in from watching it happen up close, not bolted on after the fact."}</p>
             </div>
           </section>
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
             <div className="md:col-span-5 md:col-start-8">
               <SectionLabel>Generative AI</SectionLabel>
               <p className="mt-8 text-2xl leading-snug text-hud-muted">
-                I use AI tools to move faster through ideation and iteration - the taste and final call are still mine.
+                I use AI tools to move faster through ideation and iteration. The taste and final call are still mine.
               </p>
             </div>
           </section>

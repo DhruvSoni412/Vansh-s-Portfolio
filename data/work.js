@@ -30,10 +30,15 @@ function video(key, alt) {
 
 const still = (videoKey, name, alt) => image(assets.videos[videoKey].stills[name], alt);
 
-/* Palettes: each project keeps to the colours already present in its own artwork (Brief: "do not force one background"). */
+/*
+ * Palettes. Most projects keep to the colours already present in their own artwork (Brief: "do not force one background").
+ * `site` is the website's own theme (see tailwind.config.js / globals.css: #111214 background, #EDEDED text, #C8FF4D accent,
+ * default site typography) — Clayoven uses it so that page matches the rest of the site.
+ */
+const site = { bg: "#111214", surface: "#181a1d", fg: "#EDEDED", muted: "#9ca3af", line: "rgba(255,255,255,.15)", accent: "#C8FF4D" };
 const themes = {
   basil: { bg: "#0b1a10", surface: "#11271a", fg: "#ecf3e4", muted: "rgba(236,243,228,.66)", line: "rgba(236,243,228,.16)", accent: "#c8f59b" },
-  clayoven: { bg: "#2f3b4c", surface: "#283344", fg: "#eae7d2", muted: "rgba(234,231,210,.7)", line: "rgba(234,231,210,.2)", accent: "#caa559", fontDisplay: "var(--font-playfair), Georgia, serif", fontBody: "var(--font-lato), system-ui, sans-serif" },
+  clayoven: site,
   laIsla: { bg: "#120e0a", surface: "#1b140e", fg: "#f1e6d4", muted: "rgba(241,230,212,.66)", line: "rgba(241,230,212,.16)", accent: "#d9a45b" },
   doh: { bg: "#0a0a0a", surface: "#141210", fg: "#efe9e1", muted: "rgba(239,233,225,.66)", line: "rgba(239,233,225,.16)", accent: "#e8722c" },
   rbh: { bg: "#150809", surface: "#1f0d10", fg: "#f2e6d2", muted: "rgba(242,230,210,.66)", line: "rgba(242,230,210,.16)", accent: "#d8b06a" },
@@ -105,7 +110,7 @@ const details = {
       {
         type: "ending", id: "ending", label: "08 — Ending",
         headline: "One brand. Many touchpoints.",
-        body: "From a business presentation to a kiosk, a product pack, a menu or a promotional voucher, the work was about carrying the same brand language into very different contexts — without making every format feel the same.",
+        body: "From a business presentation to a kiosk, a product pack, a menu or a promotional voucher, the work was about carrying the same brand language into very different contexts, without making every format feel the same.",
         image: image("basil/ending", "Quiet closing visual: a Basil cup and the words thank you"), imageFirst: true, imageSpan: 12,
       },
     ],
@@ -119,13 +124,12 @@ const details = {
     sections: [
       {
         type: "identity", id: "identity", label: "02 — Brand identity",
-        caption: "Navy, cream, gold and black — set in Playfair Display and Lato, with archival textures for the Nostalgia theme.",
+        caption: "Navy, cream, gold and black, set in Playfair Display and Lato, with archival textures for the Nostalgia theme.",
         tiles: {
           logo: image("clayoven/id-logo", "The Clayoven logo on navy"),
-          colours: image("clayoven/id-colours", "Clayoven logo colour variations on navy, cream, gold and black"),
           palette: image("clayoven/id-palette", "Clayoven colour palette: navy, cream, gold, black"),
           type: image("clayoven/id-type", "Clayoven typography: Top Luxury, Lato, Arizona, The Seasons, Playfair Display"),
-          tex1: image("clayoven/id-tex1", "Clayoven textures and elements: stamp shape and navy patterns"),
+          tex1: image("clayoven/id-tex1", "Clayoven navy textures and patterns"),
           tex2: image("clayoven/id-tex2", "Clayoven Nostalgia-theme textures: aged paper"),
         },
       },
@@ -169,12 +173,12 @@ const details = {
   "a-seat-at-the-table": {
     theme: themes.laIsla,
     intro: "Building a visual language for a hospitality brand across everyday content, seasonal campaigns and experiences.",
-    hero: { layout: "portrait", image: image("la-isla/hero", "La Isla Instagram grid: dark interiors, warm lighting, cocktails, food and the La Isla logo"), imageSpan: 6 },
+    hero: { layout: "portrait", image: image("la-isla/hero", "La Isla tabletop shot: an espresso martini, coffee and strawberries under the La Isla signature"), imageSpan: 6 },
     sections: [
       {
         type: "gallery", id: "everyday", label: "02 — The everyday brand", layout: "free",
         items: [
-          { img: image("la-isla/grid-2", "La Isla Instagram grid 2: tequila neon sign, food spreads and table settings"), span: 12 },
+          { img: image("la-isla/grid-2", "La Isla Instagram grid 2: interiors, cocktails, table settings and dining moments"), span: 12 },
           { img: image("la-isla/crop-tequila", "La Isla post: Tequila is cheaper than therapy"), span: 3 },
           { img: image("la-isla/crop-food", "La Isla post: a food spread — taste the world, bite by bite"), span: 3, mt: 8 },
           { img: image("la-isla/crop-cocktail", "La Isla post: cocktail and dessert — an invitation to unwind"), span: 3 },
@@ -266,7 +270,7 @@ const details = {
     sections: [
       {
         type: "text", id: "idea", label: "02 — The campaign idea",
-        body: ["The campaign uses the Royal Biryani House proposition across two everyday occasions — family meals and office lunches."],
+        body: ["The campaign uses the Royal Biryani House proposition across two everyday occasions: family meals and office lunches."],
         lines: ["Family / weekend", "Office / lunch break"],
       },
       {
@@ -332,7 +336,7 @@ const details = {
       {
         type: "ending", id: "ending", label: "06 — Ending",
         headline: "Every cut has a reason.",
-        body: "From atmosphere to product, voiceover to beat-led edits — the cut changes with the story.",
+        body: "From atmosphere to product, voiceover to beat-led edits, the cut changes with the story.",
       },
     ],
   },
@@ -393,13 +397,13 @@ const details = {
       layout: "portrait",
       image: image("personal/deadpool", "Fan-made Deadpool & Wolverine poster in red and yellow"),
       imageSpan: 5,
-      caption: "01 / 02 — Deadpool & Wolverine · Fan-made poster",
+      caption: "01 / 02 · Deadpool & Wolverine · Fan-made poster",
     },
     sections: [
       {
         type: "gallery", id: "movies", label: "02 — Movies", title: "For the love of movies.", note: "Deadpool & Wolverine → John Wick", layout: "free",
         items: [
-          { img: image("personal/johnwick", "Fan-made John Wick poster in black and red"), span: 6, start: 4, caption: "02 / 02 — John Wick · Fan-made poster" },
+          { img: image("personal/johnwick", "Fan-made John Wick poster in black and red"), span: 6, start: 4, caption: "02 / 02 · John Wick · Fan-made poster" },
         ],
       },
       {

@@ -52,7 +52,7 @@ export const projects = [
     categories: ["Brand & Identity", "Campaigns & Content", "Motion & Video"],
     featured: true,
     cover: cover("clayoven/hero", "The Clayoven identity: vertical logo on cream textured paper with an ESTD. 1999 stamp"),
-    previewVideo: null,
+    previewVideo: preview("nostalgia-reworked"),
   },
   {
     slug: "a-seat-at-the-table",
@@ -63,12 +63,12 @@ export const projects = [
     descriptor: "Building a visual language for a hospitality brand across everyday content, seasonal campaigns and experiences.",
     categories: ["Campaigns & Content"],
     featured: true,
-    cover: cover("la-isla/hero", "La Isla Instagram grid: dark interiors, warm lighting, cocktails and food"),
+    cover: cover("la-isla/hero", "La Isla tabletop shot: an espresso martini, coffee and strawberries under the La Isla signature"),
     previewVideo: null,
   },
   {
     slug: "keeping-32-years-current",
-    title: "Keeping 32 Years Current",
+    title: "Keeping 31 Years Current",
     context: "Drums of Heaven",
     type: "Pan-Asian Kitchen & Bar",
     scope: ["Social Creative", "Campaigns", "Content Design", "Art Direction"],

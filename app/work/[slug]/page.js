@@ -2,7 +2,6 @@ import { notFound, redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectPage from "@/components/work/ProjectPage";
-import { getFontClasses } from "@/components/work/fonts";
 import { getNextWorkProject, getWorkProject, legacySlugRedirects, workProjects } from "@/data/work";
 
 // Project pages carry their own palettes and are always dark. Pinning the site's colour tokens here keeps the shared
@@ -41,7 +40,7 @@ export default async function ProjectRoute({ params }) {
   return (
     <main className="relative min-h-screen bg-cosmic text-hud-text" style={DARK_TOKENS}>
       <Navbar />
-      <ProjectPage project={project} next={getNextWorkProject(slug)} fontClassName={getFontClasses(project.slug)} />
+      <ProjectPage project={project} next={getNextWorkProject(slug)} />
       <Footer />
     </main>
   );

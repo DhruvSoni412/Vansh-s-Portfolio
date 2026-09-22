@@ -38,7 +38,7 @@ function WorkCard({ project, number, reduced }) {
   };
 
   return (
-    <Link href={`/work/${project.slug}`} onPointerEnter={play} onPointerLeave={pause} onFocus={play} onBlur={pause} className="group block" aria-label={`View ${project.title} — ${project.context}`}>
+    <Link href={`/work/${project.slug}`} onPointerEnter={play} onPointerLeave={pause} onFocus={play} onBlur={pause} className="group block" aria-label={`View ${project.title} · ${project.context}`}>
       <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[rgb(var(--surface-rgb))] md:rounded-[2rem]">
         <Image
           src={project.cover.src}

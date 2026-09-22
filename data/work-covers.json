@@ -14,9 +14,9 @@
   },
   "la-isla/hero": {
    "src": "/work/la-isla/hero.webp",
-   "width": 2000,
-   "height": 2471,
-   "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCgAAAABHyCmIXObXJr4RUQkQ2kkKYwn9m9RDA2iGGSqIKL/s9CVOgs3eG0KVlA4IIgAAABwBACdASoOABEAPu1iqU2ppaOiMAgBMB2JaACdLwFx/H0AKtXJoSjW9b4rAAD+6hQVJQdq6C8fsF5zCINq3ySnt9mx29iPyTu5TJ54Gtoba87boeAW+kIQja3gCd7zdenOyPb73KOvVNi3bpMKuTjWIG2unvRIAwyHH96EQ/zvOTbH0eLfNgAA"
+   "width": 1085,
+   "height": 1326,
+   "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoOABEAPu1iqU2ppaOiMAgBMB2JbACdMoRwG//iN8CldY4bhiPYAP7BvLrexP4dDnCXg23rZAjMCFj2y+45fZj2VSTG2CI1qAdDozM4fm2BMC/dUAq8mGKgjtInSClAPhRNPWFJINTu8zx8Al3eQe1v4vgHNmisXxiSeYN7TZg3r8cCvcJ7uaAA"
   },
   "doh/hero": {
    "src": "/work/doh/hero.webp",
@@ -50,9 +50,13 @@
   }
  },
  "videos": {
+  "preview/nostalgia-reworked": {
+   "src": "/work/previews/nostalgia-reworked.mp4",
+   "sizeKB": 199
+  },
   "preview/cut-to-the-rhythm": {
    "src": "/work/previews/cut-to-the-rhythm.mp4",
-   "sizeKB": 460
+   "sizeKB": 369
   },
   "preview/beyond-the-footage": {
    "src": "/work/previews/beyond-the-footage.mp4",

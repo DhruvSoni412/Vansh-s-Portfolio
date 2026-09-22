@@ -3,13 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-const GREETINGS = [
-  "Hello",
-  "Bonjour",
-  "स्वागत हे",
-  "Ciao",
-  "Olá",
-];
+const GREETINGS = ["Hola", "Namaste", "Hello"];
+const LOOPS = 2; // cycle through the greetings twice before revealing the page
 const FLAT = "M0 0 L100 0 L100 0 Q50 0 0 0 Z";
 const CURVED = "M0 0 L100 0 L100 30 Q50 112 0 30 Z";
 const EASE = [0.76, 0, 0.24, 1];
@@ -21,9 +16,10 @@ export default function Preloader({ onComplete }) {
 
   useEffect(() => {
     let i = 0;
+    const total = GREETINGS.length * LOOPS;
     const tick = () => {
-      if (i < GREETINGS.length) {
-        setIndex(i);
+      if (i < total) {
+        setIndex(i % GREETINGS.length);
         i += 1;
         timerRef.current = setTimeout(tick, 150);
       } else {

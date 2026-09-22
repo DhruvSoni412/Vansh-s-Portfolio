@@ -3,9 +3,9 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 
 export const metadata = {
-  title: { default: "Vansh Bajaj — Graphic Designer", template: "%s — Vansh Bajaj" },
+  title: { default: "Vansh Bajaj · Graphic Designer", template: "%s · Vansh Bajaj" },
   description: "Graphic designer in New Delhi creating brand identities, social campaigns, packaging and motion-led visual systems.",
-  openGraph: { title: "Vansh Bajaj — Graphic Designer", description: "Brand identity, campaign design, packaging and motion with commercial intent.", type: "website" },
+  openGraph: { title: "Vansh Bajaj · Graphic Designer", description: "Brand identity, campaign design, packaging and motion with commercial intent.", type: "website" },
 };
 
 export default function RootLayout({ children }) {

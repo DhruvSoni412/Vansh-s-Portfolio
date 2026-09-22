@@ -25,6 +25,10 @@ const END_LAYOUT = {
 
 /* ------------------------------------------------------------------ shared */
 
+/* Section labels in data/work.js keep their "02 — " prefix as a maintainer aid (matches the brief's section
+ * numbering), but the number itself is not shown on the page — strip it at render time. */
+const unnumbered = (label) => label?.replace(/^\d+\s*—\s*/, "");
+
 function Shell({ id, children, className = "" }) {
   return (
     <section id={id} className={`relative px-5 py-16 md:px-10 md:py-24 ${className}`}>
@@ -37,7 +41,7 @@ function Head({ label, title, note }) {
   if (!label && !title && !note) return null;
   return (
     <div className="mb-10 max-w-3xl md:mb-14">
-      {label && <Eyebrow>{label}</Eyebrow>}
+      {label && <Eyebrow>{unnumbered(label)}</Eyebrow>}
       {title && (
         <h2 style={displayFont} className="mt-4 text-4xl font-semibold uppercase leading-[.95] tracking-[-0.03em] md:text-6xl">
           {title}
@@ -75,8 +79,7 @@ function TitleBlock({ project, titleClass }) {
       <Link href="/work" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-[color:var(--pj-muted)] transition hover:text-[color:var(--pj-accent)]">
         <ArrowLeft size={16} /> All work
       </Link>
-      <Eyebrow className="mt-10 md:mt-14">Project {project.number}</Eyebrow>
-      <h1 style={displayFont} className={`mt-4 font-semibold uppercase leading-[.9] tracking-[-0.04em] ${titleClass}`}>
+      <h1 style={displayFont} className={`mt-10 font-semibold uppercase leading-[.9] tracking-[-0.04em] md:mt-14 ${titleClass}`}>
         {project.title}
       </h1>
     </>
@@ -251,7 +254,7 @@ function Reel({ section }) {
           <ReelPlayer video={section.video} title={section.title} size={section.size} />
         </Reveal>
         <Reveal className={textCls} delay={0.1}>
-          <Eyebrow>{section.label}</Eyebrow>
+          <Eyebrow>{unnumbered(section.label)}</Eyebrow>
           <h2 style={displayFont} className="mt-4 text-4xl font-semibold uppercase leading-[.95] tracking-[-0.03em] md:text-6xl">{section.title}</h2>
           {section.role && <p className="mt-4 font-mono text-xs uppercase tracking-[0.18em] text-[color:var(--pj-accent)]">{section.role}</p>}
           <p className="mt-6 text-lg leading-relaxed text-[color:var(--pj-muted)] md:text-xl">{section.description}</p>
@@ -311,33 +314,41 @@ function Board({ section }) {
   );
 }
 
-function IdentityTile({ img, className, sizes }) {
+function IdentityTile({ img, label, className, sizes }) {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <Image src={img.src} alt={img.alt} fill sizes={sizes} placeholder="blur" blurDataURL={img.blurDataURL} className="object-cover" />
-    </div>
+    <figure className={className}>
+      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[color:var(--pj-line)] bg-[color:var(--pj-surface)] md:rounded-2xl">
+        <Image src={img.src} alt={img.alt} fill sizes={sizes} placeholder="blur" blurDataURL={img.blurDataURL} className="object-cover" />
+      </div>
+      {label && <Caption>{label}</Caption>}
+    </figure>
   );
 }
 
-/** Clayoven identity: logo, colour, type and texture tiles cut from the brand guidelines and set as one board. */
+/** Clayoven identity: logo, colour, type and texture tiles cut from the brand guidelines, paired up as a board. */
 function Identity({ section }) {
   const { tiles } = section;
-  const Tile = IdentityTile;
-  const wide = "aspect-[2.5/1] md:col-span-7 md:aspect-auto";
-  const narrow = "aspect-video md:col-span-5";
+  const wide = "md:col-span-7";
+  const narrow = "md:col-span-5";
+  const rows = [
+    [{ img: tiles.logo, label: "Logo", span: wide }, { img: tiles.palette, label: "Colour palette", span: narrow }],
+    [{ img: tiles.type, label: "Typography", span: wide }, { img: tiles.tex1, label: "Texture", span: narrow }],
+    [{ img: tiles.tex2, label: "Texture", span: wide }],
+  ];
   return (
     <Shell id={section.id}>
       <Head label={section.label} note={section.caption} />
-      <Reveal y={28}>
-        <div className="grid grid-cols-1 gap-[2px] overflow-hidden rounded-2xl bg-[color:var(--pj-line)] md:grid-cols-12 md:rounded-3xl">
-          <Tile img={tiles.logo} className={wide} sizes="(min-width: 768px) 690px, 100vw" />
-          <Tile img={tiles.colours} className={narrow} sizes="(min-width: 768px) 490px, 100vw" />
-          <Tile img={tiles.palette} className={narrow} sizes="(min-width: 768px) 490px, 100vw" />
-          <Tile img={tiles.type} className={wide} sizes="(min-width: 768px) 690px, 100vw" />
-          <Tile img={tiles.tex1} className={narrow} sizes="(min-width: 768px) 490px, 100vw" />
-          <Tile img={tiles.tex2} className={wide} sizes="(min-width: 768px) 690px, 100vw" />
-        </div>
-      </Reveal>
+      <div className="space-y-6 md:space-y-8">
+        {rows.map((row, i) => (
+          <Reveal key={i} delay={i * 0.08} y={28}>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-6">
+              {row.map((tile) => (
+                <IdentityTile key={tile.img.src} img={tile.img} label={tile.label} className={tile.span} sizes="(min-width: 768px) 690px, 100vw" />
+              ))}
+            </div>
+          </Reveal>
+        ))}
+      </div>
     </Shell>
   );
 }
@@ -400,7 +411,7 @@ function Ending({ section }) {
       <Shell id={section.id} className="md:py-32">
         <Reveal y={24}><ProjectImage img={image} sizes="(min-width: 1280px) 1180px, 100vw" /></Reveal>
         <Reveal className="mx-auto mt-16 max-w-4xl text-center md:mt-24" delay={0.1}>
-          {label && <Eyebrow>{label}</Eyebrow>}
+          {label && <Eyebrow>{unnumbered(label)}</Eyebrow>}
           {headlineEl}
           {body && <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[color:var(--pj-muted)] md:text-xl">{body}</p>}
         </Reveal>
@@ -415,7 +426,7 @@ function Ending({ section }) {
       <Shell id={section.id} className="md:py-32">
         <div className="grid gap-12 md:grid-cols-12 md:items-center">
           <Reveal className={layout.text}>
-            {label && <Eyebrow>{label}</Eyebrow>}
+            {label && <Eyebrow>{unnumbered(label)}</Eyebrow>}
             {headlineEl}
             {copy}
           </Reveal>
@@ -431,7 +442,7 @@ function Ending({ section }) {
   return (
     <Shell id={section.id} className="md:py-40">
       <Reveal className="mx-auto max-w-5xl text-center">
-        {label && <Eyebrow>{label}</Eyebrow>}
+        {label && <Eyebrow>{unnumbered(label)}</Eyebrow>}
         {headlineEl}
         <div className="flex flex-col items-center [&_p]:mx-auto">{copy}</div>
       </Reveal>

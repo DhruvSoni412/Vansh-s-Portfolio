@@ -9,19 +9,19 @@ const testimonials = [
   {
     name: "Basil",
     role: "Marketing Strategist",
-    text: "The pitch deck's conceptualization and execution were spot on - and he still hit the deadline without the design losing an ounce of our identity.",
+    text: "The pitch deck's conceptualization and execution were spot on, and he still hit the deadline without the design losing an ounce of our identity.",
     proofUrl: "/work/saltnpepper",
   },
   {
     name: "Founder",
     role: "Clayoven",
-    text: "The grid and the brand identity system nailed it - that blue captures Clayoven's mood exactly.",
-    proofUrl: "/work/la-isla",
+    text: "The grid and the brand identity system nailed it. That blue captures Clayoven's mood exactly.",
+    proofUrl: "/work/nostalgia-reworked",
   },
   {
     name: "Co-founder",
     role: "Creator's Commune",
-    text: "The edit, the captions, the flow - all of it just worked.",
+    text: "The edit, the captions, the flow: all of it just worked.",
     proofUrl: "/work/coke-studio",
   },
   {
@@ -50,7 +50,7 @@ export default function Testimonials() {
             <p className="eyebrow">Testimonials</p>
             <h2 className="mt-5 text-4xl font-semibold uppercase leading-none md:text-7xl">{"Don't just take my word for it."}</h2>
           </div>
-          <p className="max-w-sm text-hud-muted md:col-span-4 md:justify-self-end">Single rotating quote format, each linked to its project.</p>
+          <p className="max-w-sm text-hud-muted md:col-span-4 md:justify-self-end">A few words from the people who trusted me with their work.</p>
         </div>
 
         <div className="mt-14 overflow-hidden border-y border-white/10" aria-live="polite">
