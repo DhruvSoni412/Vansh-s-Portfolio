@@ -135,10 +135,13 @@ const details = {
         },
       },
       {
+        // Only one grid here on purpose. The second slot used to show clayoven/grid-2, but that asset's source
+        // ("02. Clayoven/03. Social Media/Main grid 2.png") is La Isla artwork filed in the Clayoven folder, so it
+        // was crediting another client's work to Clayoven. The genuine "Clayoven Grid 2 .png" exists but carries
+        // "Reel Thumbnail" placeholder labels on three of its nine cells, so it is not shown either.
         type: "gallery", id: "social", label: "03 — Social media", layout: "free",
         items: [
-          { img: image("clayoven/grid-1", "Clayoven social grid 01: a 3 × 3 grid of food and identity posts"), span: 8, start: 1, caption: "Grid 01" },
-          { img: image("clayoven/grid-2", "Clayoven social grid 02: a second 3 × 3 grid of posts and reel thumbnails"), span: 8, start: 5, mt: 8, caption: "Grid 02" },
+          { img: image("clayoven/grid-1", "Clayoven social grid: a 3 × 3 grid of food and identity posts"), span: 8, start: 3, caption: "Social grid" },
         ],
       },
       {
@@ -233,10 +236,12 @@ const details = {
     hero: { layout: "portrait", image: image("doh/hero", "Drums of Heaven creative: Double the dumplings, double the delight"), imageSpan: 6 },
     sections: [
       {
+        // doh/grid-1 is dropped: its source ("04. Doh/02. Social content/Grid 1 copy.png") is an unfinished layout
+        // mockup whose cells are labelled "Sample", "Name", "Reel Thumbnail" and "Crousel". The October grid is the
+        // finished deliverable, so it carries the section on its own.
         type: "gallery", id: "social", label: "02 — Social content", layout: "free",
         items: [
-          { img: image("doh/grid-1", "Drums of Heaven social grid 01: food, cocktails and interiors"), span: 7, start: 1, caption: "Grid 01" },
-          { img: image("doh/grid-2", "Drums of Heaven October social grid: reels, carousels and promotions"), span: 5, start: 8, mt: 24, caption: "Grid 02 · October" },
+          { img: image("doh/grid-2", "Drums of Heaven October social grid: reels, carousels and promotions"), span: 6, start: 4, caption: "October grid" },
         ],
       },
       {

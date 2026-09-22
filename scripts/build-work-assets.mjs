@@ -99,6 +99,8 @@ const IMAGES = {
   // y must clear the slide heading, whose descenders reach 0.258 — the old 0.27 pulled a sliver of gold type in at the top
   "clayoven/id-tex2": { file: slide(7), w: 1500, crop: { x: 0.013, y: 0.276, w: 0.951, h: 0.603 } },
   "clayoven/grid-1": { file: `${C}/03. Social Media/Grid of 9 copy.png`, w: 1800 },
+  // Built but not shown (see data/work.js, Clayoven "Social media"): despite living in the Clayoven folder,
+  // "Main grid 2.png" is La Isla artwork. Kept here so the asset is one line away if the source is ever fixed.
   "clayoven/grid-2": { file: `${C}/03. Social Media/Main grid 2.png`, w: 1800 },
   "clayoven/vl-dal": { file: `${C}/04. Visual LAnguage/2 2.png`, w: 1080 },
   "clayoven/vl-soya": { file: `${C}/04. Visual LAnguage/2.png`, w: 1080 },
@@ -142,6 +144,8 @@ const IMAGES = {
 
   /* ---- 04 Drums of Heaven ---- */
   "doh/hero": { file: `${D}/01. Hero/1.png`, w: 1080 },
+  // Built but not shown (see data/work.js, Doh "Social content"): "Grid 1 copy.png" is an unfinished mockup,
+  // its cells labelled "Sample" / "Name" / "Reel Thumbnail" / "Crousel".
   "doh/grid-1": { file: `${D}/02. Social content/Grid 1 copy.png`, w: 1800 },
   "doh/grid-2": { file: `${D}/02. Social content/Oct Grid Drums of Heaven copy.png`, w: 1500 },
   "doh/anniversary": { file: `${D}/03. 31 yesr/31 years of doh .png`, w: 720 },
