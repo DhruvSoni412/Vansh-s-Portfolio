@@ -183,7 +183,6 @@ const details = {
         type: "gallery", id: "everyday", label: "02 — The everyday brand", layout: "free",
         items: [
           { img: image("la-isla/grid-everyday", "La Isla everyday-brand grid: a neon-lit corner, shared plates, dessert and the leaf-green menu"), span: 12 },
-          { img: image("la-isla/grid-2", "La Isla Instagram grid 2: interiors, cocktails, table settings and dining moments"), span: 12, mt: 8 },
           { img: image("la-isla/crop-tequila", "La Isla post: Tequila is cheaper than therapy"), span: 3 },
           { img: image("la-isla/crop-food", "La Isla post: a food spread — taste the world, bite by bite"), span: 3, mt: 8 },
           { img: image("la-isla/crop-cocktail", "La Isla post: cocktail and dessert — an invitation to unwind"), span: 3 },
