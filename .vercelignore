@@ -10,3 +10,6 @@ data/05. RBh/
 data/06. reels/
 data/07. Ai reels/
 data/08. Personal/
+
+# local-only contrast-audit tooling, never part of the site
+public/__*.mjs
