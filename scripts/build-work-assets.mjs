@@ -1,8 +1,10 @@
 /**
  * Builds web-ready assets for the Work section from the raw files in /data.
  *
- *   node scripts/build-work-assets.mjs            (skips anything already built)
- *   node scripts/build-work-assets.mjs --force    (rebuild everything)
+ *   node scripts/build-work-assets.mjs                     (skips anything already built)
+ *   node scripts/build-work-assets.mjs --force             (rebuild everything)
+ *   node scripts/build-work-assets.mjs --only=clayoven/id  (only keys containing that text; implies --force
+ *                                                           and skips the video stage, so ffmpeg is not needed)
  *
  * Reads  : data/<project folders>/...            (originals — never modified)
  * Writes : public/work/**                        (WebP images, MP4 reels, posters)
@@ -33,7 +35,9 @@ const SRC = SOURCE_CANDIDATES.find((dir) => fs.existsSync(path.join(dir, "01. Ba
 const OUT = path.join(ROOT, "public", "work");
 const MANIFEST = path.join(ROOT, "data", "work-assets.json");
 const FFMPEG = process.env.FFMPEG || "ffmpeg";
-const FORCE = process.argv.includes("--force");
+// --only=<text> re-crops just the matching image keys. Handy when one crop is wrong and everything else is fine.
+const ONLY = process.argv.find((a) => a.startsWith("--only="))?.slice(7) || null;
+const FORCE = process.argv.includes("--force") || Boolean(ONLY);
 
 const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : { images: {}, videos: {} };
 manifest.images ||= {};
@@ -88,9 +92,12 @@ const IMAGES = {
   "clayoven/id-palette": { file: slide(4), w: 1500, crop: { x: 0.04, y: 0.44, w: 0.92, h: 0.36 } },
   "clayoven/id-type": { file: slide(5), w: 1500, crop: { x: 0, y: 0.28, w: 1, h: 0.684 } },
   // same deck-page problem, and on white (not navy) bg -> crop past the stamp-shaped swatch (its scalloped edges leave white
-  // slivers against any crop box) to the two plain texture swatches only
-  "clayoven/id-tex1": { file: slide(6), w: 1500, crop: { x: 0.3, y: 0.33, w: 0.64, h: 0.5 } },
-  "clayoven/id-tex2": { file: slide(7), w: 1500, crop: { x: 0, y: 0.27, w: 1, h: 0.684 } },
+  // slivers against any crop box) to the two plain texture swatches only.
+  // Both texture crops hug the swatches with an equal margin on all four sides. The slides are 16:9, so a margin of
+  // m in x needs m * 16/9 in y to look the same: 0.012 / 0.0213 here.
+  "clayoven/id-tex1": { file: slide(6), w: 1500, crop: { x: 0.307, y: 0.311, w: 0.63, h: 0.526 } },
+  // y must clear the slide heading, whose descenders reach 0.258 — the old 0.27 pulled a sliver of gold type in at the top
+  "clayoven/id-tex2": { file: slide(7), w: 1500, crop: { x: 0.013, y: 0.276, w: 0.951, h: 0.603 } },
   "clayoven/grid-1": { file: `${C}/03. Social Media/Grid of 9 copy.png`, w: 1800 },
   "clayoven/grid-2": { file: `${C}/03. Social Media/Main grid 2.png`, w: 1800 },
   "clayoven/vl-dal": { file: `${C}/04. Visual LAnguage/2 2.png`, w: 1080 },
@@ -160,7 +167,10 @@ const IMAGES = {
   "personal/deadpool": { file: `${P}/deadpool.jpg`, w: 1440 },
   "personal/johnwick": { file: `${P}/jnwck.jpg`, w: 1440 },
   "personal/lowpoly": { file: `${P}/Low Poly Art.png`, w: 683 },
-  "personal/cover": { file: `${P}/deadpool.jpg`, w: 1000, cover: { ratio: 0.8, fx: 0.5, fy: 0.42 } },
+  // Card cover for "Just Because". The two movie posters are 2:3 and both carry a lorem-ipsum strip along the bottom,
+  // so neither survives a 4:5 card crop cleanly; the low-poly piece is 0.683:1 with real credits, and trimming its
+  // bottom 15% lands on 4:5 exactly while keeping the face and the JOKER title whole.
+  "personal/cover": { file: `${P}/Low Poly Art.png`, w: 1000, crop: { x: 0, y: 0.046, w: 1, h: 0.854 } },
   "personal/exp-tealogy-store": { file: `${P}/Sm posts/Place Holder 02y.png`, w: 1080 },
   "personal/exp-tealogy-chai": { file: `${P}/Sm posts/Place Holder 3.png`, w: 1080 },
   "personal/exp-sugarroom": { file: `${P}/Sm posts/Place Holder 5.png`, w: 1080 },
@@ -329,12 +339,18 @@ function save() {
 }
 
 /* ------------------------------------------------------------------ */
-console.log(`Building Work assets -> ${path.relative(ROOT, OUT)}  (force=${FORCE})`);
+console.log(`Building Work assets -> ${path.relative(ROOT, OUT)}  (force=${FORCE}${ONLY ? `, only=${ONLY}` : ""})`);
 let n = 0;
 for (const [key, spec] of Object.entries(IMAGES)) {
+  if (ONLY && !key.includes(ONLY)) continue;
   const r = await buildImage(key, spec);
   console.log(`  img  ${key.padEnd(34)} ${r}`);
   if (++n % 10 === 0) save();
+}
+if (ONLY) {
+  save();
+  console.log(`\nDone. ${n} image(s) rebuilt.`);
+  process.exit(0);
 }
 for (const [key, spec] of Object.entries(COVERS_FROM_VIDEO)) {
   await frameToImage(abs(spec.video), spec.at, key, { cover: spec.cover, w: 1000 });

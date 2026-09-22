@@ -8,48 +8,33 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { FILTERS, metaLine, projects } from "@/data/work-index";
 import { RevealText } from "./MotionText";
 
-const isTouch = () => window.matchMedia("(hover: none), (pointer: coarse)").matches;
-
 /**
  * Card format (Brief): conceptual title -> one-line descriptor -> client/context metadata -> visual preview.
- * Projects with a short preview loop (the reel projects) play it on hover, or while in view on touch screens.
+ * A project with a short preview loop shows the loop and nothing else — it starts as soon as the card is on screen,
+ * on every device, with no cover still stacked behind it to show through at the edges. The cover image is the
+ * fallback for projects without a loop, and for reduced-motion users.
  */
 function WorkCard({ project, number, reduced }) {
   const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
+  const showVideo = Boolean(project.previewVideo) && !reduced;
 
   useEffect(() => {
-    if (!project.previewVideo || reduced || !isTouch()) return;
+    if (!showVideo) return;
     const video = videoRef.current;
     if (!video) return;
+    // preload="none" means the file is only fetched once play() is called, so off-screen cards stay free.
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) video.play().catch(() => {});
       else video.pause();
-    }, { threshold: 0.6 });
+    }, { threshold: 0.25 });
     observer.observe(video);
     return () => observer.disconnect();
-  }, [project.previewVideo, reduced]);
-
-  const play = () => { if (!reduced) videoRef.current?.play().catch(() => {}); };
-  const pause = () => {
-    if (isTouch()) return;
-    videoRef.current?.pause();
-    setPlaying(false);
-  };
+  }, [showVideo]);
 
   return (
-    <Link href={`/work/${project.slug}`} onPointerEnter={play} onPointerLeave={pause} onFocus={play} onBlur={pause} className="group block" aria-label={`View ${project.title} · ${project.context}`}>
+    <Link href={`/work/${project.slug}`} className="group block" aria-label={`View ${project.title} · ${project.context}`}>
       <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[rgb(var(--surface-rgb))] md:rounded-[2rem]">
-        <Image
-          src={project.cover.src}
-          alt={project.cover.alt}
-          fill
-          sizes="(min-width: 768px) 46vw, 100vw"
-          placeholder="blur"
-          blurDataURL={project.cover.blurDataURL}
-          className="object-cover transition duration-700 group-hover:scale-[1.03]"
-        />
-        {project.previewVideo && (
+        {showVideo ? (
           <video
             ref={videoRef}
             src={project.previewVideo}
@@ -58,8 +43,17 @@ function WorkCard({ project, number, reduced }) {
             playsInline
             preload="none"
             aria-hidden="true"
-            onPlaying={() => setPlaying(true)}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${playing ? "opacity-100" : "opacity-0"}`}
+            className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <Image
+            src={project.cover.src}
+            alt={project.cover.alt}
+            fill
+            sizes="(min-width: 768px) 46vw, 100vw"
+            placeholder="blur"
+            blurDataURL={project.cover.blurDataURL}
+            className="object-cover transition duration-700 group-hover:scale-[1.03]"
           />
         )}
         <span className="absolute left-5 top-5 rounded-full bg-black/45 px-3 py-1.5 font-mono text-xs text-white backdrop-blur-md md:left-6 md:top-6">{number}</span>

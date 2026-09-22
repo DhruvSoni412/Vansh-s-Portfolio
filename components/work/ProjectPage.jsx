@@ -314,26 +314,41 @@ function Board({ section }) {
   );
 }
 
-function IdentityTile({ img, label, className, sizes }) {
+/* Identity plates are crops off the guideline pages, so they arrive at whatever proportion the artwork happened to
+ * occupy — from 2.1:1 for the textures to 4.5:1 for the palette bar. They are shown at that proportion: a fixed box
+ * plus object-cover would shave the ends off every one (the palette lost its black swatch, the type specimen lost
+ * "Top Luxury" and "Playfair Display"). Rows below size their columns from the same ratios so nothing has to be cut. */
+function IdentityTile({ img, label, sizes }) {
   return (
-    <figure className={className}>
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[color:var(--pj-line)] bg-[color:var(--pj-surface)] md:rounded-2xl">
-        <Image src={img.src} alt={img.alt} fill sizes={sizes} placeholder="blur" blurDataURL={img.blurDataURL} className="object-cover" />
-      </div>
+    <figure className="min-w-0">
+      <span className="block overflow-hidden rounded-xl border border-[color:var(--pj-line)] bg-[color:var(--pj-surface)] md:rounded-2xl">
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={img.width}
+          height={img.height}
+          sizes={sizes}
+          placeholder={img.blurDataURL ? "blur" : "empty"}
+          blurDataURL={img.blurDataURL}
+          className="block h-auto w-full"
+        />
+      </span>
       {label && <Caption>{label}</Caption>}
     </figure>
   );
 }
 
-/** Clayoven identity: logo, colour, type and texture tiles cut from the brand guidelines, paired up as a board. */
+const ratio = (img) => img.width / img.height;
+
+/** Clayoven identity: logo, colour, type and texture tiles cut from the brand guidelines, laid out as a board. */
 function Identity({ section }) {
   const { tiles } = section;
-  const wide = "md:col-span-7";
-  const narrow = "md:col-span-5";
+  // Three rows of two. The 4.5:1 palette bar is paired with the narrowest plate left over so it still gets the width
+  // it needs, and the widest plate (16:9 logo lockups) sits beside the logo it belongs to rather than being starved.
   const rows = [
-    [{ img: tiles.logo, label: "Logo", span: wide }, { img: tiles.palette, label: "Colour palette", span: narrow }],
-    [{ img: tiles.type, label: "Typography", span: wide }, { img: tiles.tex1, label: "Texture", span: narrow }],
-    [{ img: tiles.tex2, label: "Texture", span: wide }],
+    [{ img: tiles.logo, label: "Logo" }, { img: tiles.colours, label: "Logo on brand colours" }],
+    [{ img: tiles.type, label: "Typography" }, { img: tiles.palette, label: "Colour palette" }],
+    [{ img: tiles.tex1, label: "Texture I" }, { img: tiles.tex2, label: "Texture II" }],
   ];
   return (
     <Shell id={section.id}>
@@ -341,9 +356,18 @@ function Identity({ section }) {
       <div className="space-y-6 md:space-y-8">
         {rows.map((row, i) => (
           <Reveal key={i} delay={i * 0.08} y={28}>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-6">
+            {/* fr units in proportion to each image's aspect ratio, so both plates in a row end up the same height */}
+            <div
+              className="grid grid-cols-1 gap-6 md:[grid-template-columns:var(--id-cols)]"
+              style={{ "--id-cols": row.map((tile) => `${ratio(tile.img).toFixed(4)}fr`).join(" ") }}
+            >
               {row.map((tile) => (
-                <IdentityTile key={tile.img.src} img={tile.img} label={tile.label} className={tile.span} sizes="(min-width: 768px) 690px, 100vw" />
+                <IdentityTile
+                  key={tile.img.src}
+                  img={tile.img}
+                  label={tile.label}
+                  sizes={row.length === 1 ? "(min-width: 768px) 1180px, 100vw" : "(min-width: 768px) 660px, 100vw"}
+                />
               ))}
             </div>
           </Reveal>

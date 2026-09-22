@@ -127,6 +127,7 @@ const details = {
         caption: "Navy, cream, gold and black, set in Playfair Display and Lato, with archival textures for the Nostalgia theme.",
         tiles: {
           logo: image("clayoven/id-logo", "The Clayoven logo on navy"),
+          colours: image("clayoven/id-colours", "The Clayoven logo locked up on each of the four brand colours: navy, cream, gold and black"),
           palette: image("clayoven/id-palette", "Clayoven colour palette: navy, cream, gold, black"),
           type: image("clayoven/id-type", "Clayoven typography: Top Luxury, Lato, Arizona, The Seasons, Playfair Display"),
           tex1: image("clayoven/id-tex1", "Clayoven navy textures and patterns"),

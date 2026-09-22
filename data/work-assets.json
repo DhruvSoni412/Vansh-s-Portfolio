@@ -201,14 +201,14 @@
   "clayoven/id-tex1": {
    "src": "/work/clayoven/id-tex1.webp",
    "width": 1500,
-   "height": 659,
-   "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoOAAYAA4BaJZQCdADJea8oAP7eCBDdk/yDiJfmwbguyV/qwbwYbkryx/BTa+NAAAA="
+   "height": 704,
+   "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoOAAcAA4BaJZQCdAEOuwSAAP7RZZWvbiuPrLV/QrS4GmufCGL4u3hu/WEpFESAkKyCYpJl1Q1AAA=="
   },
   "clayoven/id-tex2": {
    "src": "/work/clayoven/id-tex2.webp",
    "width": 1500,
-   "height": 577,
-   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoOAAUAA4BaJYwCw7Dv3+idYAD+t+FpjbVsNTMuJnWTbyBzEDzyVt12iEoVpCWsnZoAAA=="
+   "height": 535,
+   "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoOAAUAA4BaJYgCdAD0Ma4oAAD+yeL+EazjKft9KcI3SgRVOijnyyHT+EEKAAAA"
   },
   "clayoven/grid-1": {
    "src": "/work/clayoven/grid-1.webp",
@@ -512,9 +512,9 @@
   },
   "personal/cover": {
    "src": "/work/personal/cover.webp",
-   "width": 1000,
-   "height": 1250,
-   "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JbACdMoMYADu8R51p106Vy4mqAAD+6gV85Gg6sPT3wrvJ/VzZPNmGqtl34J8ZbFydtXhwlWa8wJ9tyknh9Rz58t5IvfEVX+ET+axEbXwwQtqlKmvl9MHpuSh+cvcPg6yxWFnqorkCqS7b3OaNtSKV/XRGdxL1vivIt47Dw06OZvxZkAAAAA=="
+   "width": 683,
+   "height": 854,
+   "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoOABIAPu1iqU2ppaQiMAgBMB2JZQDImCL87ba0EtrJ98KJHAD8KUCj3YE2RFHzF2fo0+CbsI3SHcSAHNqRot5/+rwa6LH5gz3SOKtnbN7XtyVzqyhdnr1j02VLqC7/vRkNo7o+1mpMSgSLDRomioAA"
   },
   "personal/exp-tealogy-store": {
    "src": "/work/personal/exp-tealogy-store.webp",
