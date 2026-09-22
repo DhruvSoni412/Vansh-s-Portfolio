@@ -124,6 +124,9 @@ const IMAGES = {
   // clean 3x3 grid of finished lifestyle shots. Source is the full-size "Grid View" export from 01. Hero — the
   // earlier "La Isla Grid 3.webp" was a 1610x2000 re-save whose bottom row was clipped ~6% short of a full cell.
   "la-isla/grid-2": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
+  // The six-cell "everyday brand" grid, from the clean export (the V3 file of the same artwork carries
+  // "Reel Thumbnail" placeholder labels). Filed under 02. Clayoven in the source folders, but it is La Isla work.
+  "la-isla/grid-everyday": { file: `${C}/03. Social Media/Main grid 2.png`, w: 2200 },
   "la-isla/crop-tequila": { file: `${L}/02. THE EVERYFDAY BRND/Generative Fill 2.png`, w: 1080 },
   "la-isla/crop-food": { file: `${L}/02. THE EVERYFDAY BRND/Layer 3.png`, w: 1080 },
   "la-isla/crop-cocktail": { file: `${L}/02. THE EVERYFDAY BRND/Layer 2.png`, w: 1080 },

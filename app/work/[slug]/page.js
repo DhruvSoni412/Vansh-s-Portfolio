@@ -14,6 +14,9 @@ const DARK_TOKENS = {
   "--text-rgb": "237 237 237",
   "--muted-rgb": "156 163 175",
   "--line-rgb": "255 255 255",
+  "--accent": "#C8FF4D",
+  "--accent-rgb": "200 255 77",
+  "--accent-light-rgb": "226 255 136",
   colorScheme: "dark",
 };
 

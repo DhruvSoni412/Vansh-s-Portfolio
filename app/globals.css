@@ -18,6 +18,15 @@ html[data-theme="light"] .bg-cosmic\/80,
 html[data-theme="light"] .bg-cosmic\/85 { background-color: rgb(255 255 252 / .74); }
 html[data-theme="light"] .shadow-2xl { box-shadow: 0 24px 70px rgb(17 18 20 / .14); }
 
+/* Chrome keeps a transitioning `color`/`background-color` pinned to its old
+   value when the var() it resolves from changes, so every element carrying a
+   `transition` utility stayed painted in the outgoing theme after a toggle.
+   Switching with transitions off makes the new values land immediately. */
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after { transition: none !important; }
+
 /* ---- Lenis smooth-scroll styles ---- */
 html.lenis,
 html.lenis body {

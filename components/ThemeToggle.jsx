@@ -17,7 +17,11 @@ export default function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, readTheme, () => "dark");
   const toggle = () => {
     const next = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
+    const root = document.documentElement;
+    root.classList.add("theme-switching");
+    root.dataset.theme = next;
+    void root.offsetWidth; // flush the new colours while transitions are off
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove("theme-switching")));
     localStorage.setItem("portfolio-theme", next);
     window.dispatchEvent(new CustomEvent("portfolio-theme-change", { detail: next }));
   };
