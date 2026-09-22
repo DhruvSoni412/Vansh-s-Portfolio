@@ -116,8 +116,9 @@ const IMAGES = {
   // placeholder-free, portrait-friendly single shot for the hero
   "la-isla/hero": { file: `${L}/02. THE EVERYFDAY BRND/La Isla Grid 2 V3 .jpg`, w: 2000, crop: { x: 0, y: 0.505, w: 0.328, h: 0.485 } },
   // replaces the old "La Isla Grid 2 V3" export (which had unfinished "Reel Thumbnail" placeholder cells) with a
-  // clean 3x3 grid of finished lifestyle shots
-  "la-isla/grid-2": { file: `${L}/02. THE EVERYFDAY BRND/La Isla Grid 3.webp`, w: 2000 },
+  // clean 3x3 grid of finished lifestyle shots. Source is the full-size "Grid View" export from 01. Hero — the
+  // earlier "La Isla Grid 3.webp" was a 1610x2000 re-save whose bottom row was clipped ~6% short of a full cell.
+  "la-isla/grid-2": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
   "la-isla/crop-tequila": { file: `${L}/02. THE EVERYFDAY BRND/Generative Fill 2.png`, w: 1080 },
   "la-isla/crop-food": { file: `${L}/02. THE EVERYFDAY BRND/Layer 3.png`, w: 1080 },
   "la-isla/crop-cocktail": { file: `${L}/02. THE EVERYFDAY BRND/Layer 2.png`, w: 1080 },

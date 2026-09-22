@@ -18,18 +18,6 @@ const testimonials = [
     text: "The grid and the brand identity system nailed it. That blue captures Clayoven's mood exactly.",
     proofUrl: "/work/nostalgia-reworked",
   },
-  {
-    name: "Co-founder",
-    role: "Creator's Commune",
-    text: "The edit, the captions, the flow: all of it just worked.",
-    proofUrl: "/work/coke-studio",
-  },
-  {
-    name: "Sai Tuition Classes",
-    role: "Campaign Client",
-    text: "The banner design felt genuinely premium, and the reel edit was clean and on point.",
-    proofUrl: "/work/drums-of-heaven",
-  },
 ];
 
 export default function Testimonials() {
