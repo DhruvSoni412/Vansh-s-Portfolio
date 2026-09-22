@@ -56,7 +56,7 @@ function WorkCard({ project, number, reduced }) {
             className="object-cover transition duration-700 group-hover:scale-[1.03]"
           />
         )}
-        <span className="absolute left-5 top-5 rounded-full bg-black/45 px-3 py-1.5 font-mono text-xs text-white backdrop-blur-md md:left-6 md:top-6">{number}</span>
+        <span className="absolute left-5 top-5 rounded-full bg-black/70 px-3 py-1.5 font-mono text-xs text-white backdrop-blur-md md:left-6 md:top-6">{number}</span>
         <span className="absolute right-5 top-5 grid h-12 w-12 translate-y-2 place-items-center rounded-full bg-gold text-cosmic opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 md:right-6 md:top-6 md:h-14 md:w-14"><ArrowUpRight /></span>
       </div>
       <div className="mt-5 md:mt-6">

@@ -44,7 +44,7 @@ export default function Preloader({ onComplete }) {
         {GREETINGS.map((g, i) => (
           <motion.span
             key={g}
-            className="absolute inset-0 flex items-center justify-center text-4xl font-extrabold tracking-widest uppercase text-gold md:text-6xl glow-text-gold"
+            className="absolute inset-0 flex items-center justify-center text-4xl font-extrabold tracking-widest uppercase text-gold md:text-6xl glow-text-accent"
             initial={{ opacity: 0, y: 16 }}
             animate={
               i === index && phase === "greet"

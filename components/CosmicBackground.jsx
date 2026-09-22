@@ -101,7 +101,7 @@ export default function CosmicBackground() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = lightTheme ? `rgba(17,18,20,${factor * .06})` : `rgba(200,255,77,${factor * .12})`;
+          ctx.strokeStyle = lightTheme ? `rgba(43,13,161,${factor * .1})` : `rgba(200,255,77,${factor * .12})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         } else {
@@ -110,9 +110,9 @@ export default function CosmicBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = lightTheme ? `rgba(17,18,20,${p.alpha * .16})` : `rgba(200,255,77,${p.alpha * .65})`;
+        ctx.fillStyle = lightTheme ? `rgba(43,13,161,${p.alpha * .24})` : `rgba(200,255,77,${p.alpha * .65})`;
         ctx.shadowBlur = lightTheme ? 0 : p.radius > 1.5 ? 8 : 0;
-        ctx.shadowColor = lightTheme ? "rgba(17,18,20,.2)" : p.color;
+        ctx.shadowColor = lightTheme ? "rgba(43,13,161,.25)" : p.color;
         ctx.fill();
         ctx.shadowBlur = 0;
       }

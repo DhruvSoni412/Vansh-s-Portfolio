@@ -204,14 +204,14 @@ export default function About({ started, revealed, onReveal }) {
                     y: [0, -16, 0],
                     boxShadow: isHovered
                       ? [
-                          "0 0 50px rgba(226, 192, 114, 0.6)",
-                          "0 0 90px rgba(226, 192, 114, 0.9)",
-                          "0 0 50px rgba(226, 192, 114, 0.6)",
+                          "0 0 50px rgb(var(--accent-rgb) / .55)",
+                          "0 0 90px rgb(var(--accent-rgb) / .8)",
+                          "0 0 50px rgb(var(--accent-rgb) / .55)",
                         ]
                       : [
-                          "0 0 35px rgba(226, 192, 114, 0.35)",
-                          "0 0 70px rgba(226, 192, 114, 0.75)",
-                          "0 0 35px rgba(226, 192, 114, 0.35)",
+                          "0 0 35px rgb(var(--accent-rgb) / .32)",
+                          "0 0 70px rgb(var(--accent-rgb) / .65)",
+                          "0 0 35px rgb(var(--accent-rgb) / .32)",
                         ],
                   }}
                   transition={{
@@ -219,7 +219,7 @@ export default function About({ started, revealed, onReveal }) {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="relative h-56 w-56 rounded-full p-[3px] bg-gradient-to-tr from-gold via-cyan-accent to-gold-light md:h-72 md:w-72 flex items-center justify-center"
+                  className="relative h-56 w-56 rounded-full p-[3px] bg-gradient-to-tr from-gold via-gold-light to-gold md:h-72 md:w-72 flex items-center justify-center"
                 >
                   <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-cosmic bg-cosmic-card flex items-center justify-center">
                     <Image
@@ -266,7 +266,7 @@ export default function About({ started, revealed, onReveal }) {
               transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
               className="text-5xl font-extrabold uppercase tracking-tight text-hud-text md:text-8xl lg:text-9xl"
             >
-              Vansh <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-cyan-accent">Bajaj</span>
+              Vansh <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold">Bajaj</span>
             </motion.h1>
 
             <motion.p
@@ -285,7 +285,7 @@ export default function About({ started, revealed, onReveal }) {
               transition={{ duration: 0.8, delay: 0.35, ease: EASE }}
               className="my-10 relative group"
             >
-              <div className="relative h-44 w-44 rounded-full p-[3px] bg-gradient-to-tr from-gold via-cyan-accent to-gold shadow-2xl shadow-gold/20 md:h-56 md:w-56">
+              <div className="relative h-44 w-44 rounded-full p-[3px] bg-gradient-to-tr from-gold via-gold-light to-gold shadow-2xl shadow-gold/20 md:h-56 md:w-56">
                 <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-cosmic bg-cosmic-card">
                   <Image
                     src="/profile.jpg"
@@ -300,7 +300,7 @@ export default function About({ started, revealed, onReveal }) {
               <div className="absolute -bottom-2 right-0 rounded-full border border-gold/40 bg-cosmic-card/90 px-3 py-1.5 text-[11px] font-mono text-gold backdrop-blur-md shadow-lg flex items-center gap-1.5">
                 <Palette size={13} /> Brand Identity
               </div>
-              <div className="absolute -top-2 left-0 rounded-full border border-cyan-accent/40 bg-cosmic-card/90 px-3 py-1.5 text-[11px] font-mono text-cyan-accent backdrop-blur-md shadow-lg flex items-center gap-1.5">
+              <div className="absolute -top-2 left-0 rounded-full border border-gold/40 bg-cosmic-card/90 px-3 py-1.5 text-[11px] font-mono text-gold backdrop-blur-md shadow-lg flex items-center gap-1.5">
                 <Video size={13} /> Motion & Video
               </div>
             </motion.div>
