@@ -69,8 +69,8 @@ export default function AboutPage() {
             <SectionLabel>{"Brands I've worked with"}</SectionLabel>
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {logoBrands.map((brand) => (
-                <div key={brand.name} className="flex min-h-40 items-center justify-center rounded-2xl border border-white/10 bg-[#111214] p-8">
-                  <Image src={brand.src} alt={`${brand.name} logo`} width={260} height={150} className="max-h-24 w-auto object-contain" />
+                <div key={brand.name} className="flex min-h-40 items-center justify-center rounded-2xl border border-white/10 bg-cosmic p-8">
+                  <Image src={brand.src} alt={`${brand.name} logo`} width={260} height={150} className="brand-logo max-h-24 w-auto object-contain" />
                 </div>
               ))}
             </div>

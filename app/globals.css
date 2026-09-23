@@ -17,6 +17,10 @@ html[data-theme="light"] .bg-cosmic\/70,
 html[data-theme="light"] .bg-cosmic\/80,
 html[data-theme="light"] .bg-cosmic\/85 { background-color: rgb(255 255 252 / .74); }
 html[data-theme="light"] .shadow-2xl { box-shadow: 0 24px 70px rgb(17 18 20 / .14); }
+/* The client logos are single-colour white artwork on transparent PNGs, so they vanish against a light tile.
+   Inverting flips the ink to near-black and leaves the alpha channel alone. Their tile follows --bg, so the
+   pairing holds in both themes. Applies only to .brand-logo — the Adobe tool icons carry their own colour. */
+html[data-theme="light"] .brand-logo { filter: invert(1); }
 
 /* Chrome keeps a transitioning `color`/`background-color` pinned to its old
    value when the var() it resolves from changes, so every element carrying a
