@@ -99,9 +99,9 @@ const IMAGES = {
   // y must clear the slide heading, whose descenders reach 0.258 — the old 0.27 pulled a sliver of gold type in at the top
   "clayoven/id-tex2": { file: slide(7), w: 1500, crop: { x: 0.013, y: 0.276, w: 0.951, h: 0.603 } },
   "clayoven/grid-1": { file: `${C}/03. Social Media/Grid of 9 copy.png`, w: 1800 },
-  // Built but not shown (see data/work.js, Clayoven "Social media"): despite living in the Clayoven folder,
-  // "Main grid 2.png" is La Isla artwork. Kept here so the asset is one line away if the source is ever fixed.
-  "clayoven/grid-2": { file: `${C}/03. Social Media/Main grid 2.png`, w: 1800 },
+  // The second social grid. Note this is "Clayoven Grid 2 .png", not the neighbouring "Main grid 2.png" — that
+  // one lives in the Clayoven folder but is La Isla artwork (it feeds la-isla/grid-everyday).
+  "clayoven/grid-social": { file: `${C}/03. Social Media/Clayoven Grid 2 .png`, w: 1800 },
   "clayoven/vl-dal": { file: `${C}/04. Visual LAnguage/2 2.png`, w: 1080 },
   "clayoven/vl-soya": { file: `${C}/04. Visual LAnguage/2.png`, w: 1080 },
   "clayoven/vl-seekh": { file: `${C}/04. Visual LAnguage/4.png`, w: 1080 },

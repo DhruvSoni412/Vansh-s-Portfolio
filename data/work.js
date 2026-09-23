@@ -135,13 +135,13 @@ const details = {
         },
       },
       {
-        // Only one grid here on purpose. The second slot used to show clayoven/grid-2, but that asset's source
-        // ("02. Clayoven/03. Social Media/Main grid 2.png") is La Isla artwork filed in the Clayoven folder, so it
-        // was crediting another client's work to Clayoven. The genuine "Clayoven Grid 2 .png" exists but carries
-        // "Reel Thumbnail" placeholder labels on three of its nine cells, so it is not shown either.
+        // Grid 02 is "Clayoven Grid 2 .png" — genuine Clayoven work. It is deliberately NOT the neighbouring
+        // "Main grid 2.png", which sits in the Clayoven folder but is La Isla artwork and would credit another
+        // client here. Three of its nine cells carry a "Reel Thumbnail" label marking which posts are reels.
         type: "gallery", id: "social", label: "03 — Social media", layout: "free",
         items: [
-          { img: image("clayoven/grid-1", "Clayoven social grid: a 3 × 3 grid of food and identity posts"), span: 8, start: 3, caption: "Social grid" },
+          { img: image("clayoven/grid-1", "Clayoven social grid 01: a 3 × 3 grid of food and identity posts"), span: 8, start: 1, caption: "Grid 01" },
+          { img: image("clayoven/grid-social", "Clayoven social grid 02: dish cards, heritage marks and the restaurant exterior"), span: 8, start: 5, mt: 8, caption: "Grid 02" },
         ],
       },
       {
