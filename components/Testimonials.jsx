@@ -18,6 +18,16 @@ const testimonials = [
     text: "The grid and the brand identity system nailed it. That blue captures Clayoven's mood exactly.",
     proofUrl: "/work/nostalgia-reworked",
   },
+  {
+    name: "Co-founder",
+    role: "Creator's Commune",
+    text: "The edit, the captions, the flow: all of it just worked.",
+  },
+  {
+    name: "Sai Tuition Classes",
+    role: "Campaign Client",
+    text: "The banner design felt genuinely premium, and the reel edit was clean and on point.",
+  },
 ];
 
 export default function Testimonials() {
@@ -47,23 +57,31 @@ export default function Testimonials() {
             animate={{ x: `${index * -100}%` }}
             transition={{ duration: reduced ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            {testimonials.map((quote, quoteIndex) => (
-              <article key={quote.name} className="min-w-full px-1 py-10 md:py-14">
-                <Link href={quote.proofUrl} className="group grid gap-8 md:grid-cols-12 md:items-end" aria-label={`View linked work for ${quote.name}`}>
-                  <div className="md:col-span-8">
-                    <span className="font-mono text-xs text-gold">{String(quoteIndex + 1).padStart(2, "0")}</span>
-                    <blockquote className="mt-6 text-3xl font-medium leading-tight md:text-6xl">{`"${quote.text}"`}</blockquote>
-                  </div>
-                  <div className="md:col-span-4">
-                    <p className="text-xl font-semibold uppercase">{quote.name}</p>
-                    <p className="mt-2 text-hud-muted">{quote.role}</p>
-                    <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold">
-                      View linked work <ArrowUpRight size={16} className="transition group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </span>
-                  </div>
-                </Link>
-              </article>
-            ))}
+            {testimonials.map((quote, quoteIndex) => {
+              // Only testimonials with a proofUrl link out to a project; the rest are plain quotes.
+              const linked = Boolean(quote.proofUrl);
+              const Wrapper = linked ? Link : "div";
+              const wrapperProps = linked ? { href: quote.proofUrl, "aria-label": `View linked work for ${quote.name}` } : {};
+              return (
+                <article key={quote.name} className="min-w-full px-1 py-10 md:py-14">
+                  <Wrapper {...wrapperProps} className={`${linked ? "group " : ""}grid gap-8 md:grid-cols-12 md:items-end`}>
+                    <div className="md:col-span-8">
+                      <span className="font-mono text-xs text-gold">{String(quoteIndex + 1).padStart(2, "0")}</span>
+                      <blockquote className="mt-6 text-3xl font-medium leading-tight md:text-6xl">{`"${quote.text}"`}</blockquote>
+                    </div>
+                    <div className="md:col-span-4">
+                      <p className="text-xl font-semibold uppercase">{quote.name}</p>
+                      <p className="mt-2 text-hud-muted">{quote.role}</p>
+                      {linked && (
+                        <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold">
+                          View linked work <ArrowUpRight size={16} className="transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </span>
+                      )}
+                    </div>
+                  </Wrapper>
+                </article>
+              );
+            })}
           </motion.div>
         </div>
 
