@@ -177,7 +177,7 @@ const details = {
   "a-seat-at-the-table": {
     theme: themes.laIsla,
     intro: "Building a visual language for a hospitality brand across everyday content, seasonal campaigns and experiences.",
-    hero: { layout: "portrait", image: image("la-isla/hero", "La Isla tabletop shot: an espresso martini, coffee and strawberries under the La Isla signature"), imageSpan: 6 },
+    hero: { layout: "portrait", image: image("la-isla/hero", "La Isla Instagram grid: interiors, cocktails, table settings and dining moments"), imageSpan: 6 },
     sections: [
       {
         type: "gallery", id: "everyday", label: "02 — The everyday brand", layout: "free",

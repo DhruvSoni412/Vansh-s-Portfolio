@@ -116,15 +116,11 @@ const IMAGES = {
   /* ---- 03 La Isla ---- */
   // bottom-left cell of the same "everyday" grid export (cocktail + coffee, "An Invitation to Unwind") -> a clean,
   // placeholder-free, portrait-friendly single shot for the hero
-  // Cut from the clean export of that grid. "La Isla Grid 2 V3 .jpg" is the same artwork at the same 3308x2733, but
-  // carries "Reel Thumbnail" placeholder labels; "Main grid 2.png" is the finished version of it (mis-filed under
-  // 02. Clayoven — it is La Isla work), so the crop box below is unchanged.
-  "la-isla/hero": { file: `${C}/03. Social Media/Main grid 2.png`, w: 2000, crop: { x: 0, y: 0.505, w: 0.328, h: 0.485 } },
-  // replaces the old "La Isla Grid 2 V3" export (which had unfinished "Reel Thumbnail" placeholder cells) with a
-  // clean 3x3 grid of finished lifestyle shots. Source is the full-size "Grid View" export from 01. Hero — the
-  // earlier "La Isla Grid 3.webp" was a 1610x2000 re-save whose bottom row was clipped ~6% short of a full cell.
-  // Built but not shown (see data/work.js, La Isla "The everyday brand"): the section runs on grid-everyday alone.
-  "la-isla/grid-2": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
+  // The 3x3 grid of finished lifestyle shots, serving as both the project hero and the /work card cover. Source is
+  // the full-size "Grid View" export from 01. Hero — the older "La Isla Grid 3.webp" was a 1610x2000 re-save whose
+  // bottom row was clipped ~6% short of a full cell. At 0.805:1 it is within half a percent of the card's 4:5 box,
+  // so object-cover trims almost nothing, and it stands on its own at natural ratio in the portrait hero slot.
+  "la-isla/hero": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
   // The six-cell "everyday brand" grid, from the clean export (the V3 file of the same artwork carries
   // "Reel Thumbnail" placeholder labels). Filed under 02. Clayoven in the source folders, but it is La Isla work.
   "la-isla/grid-everyday": { file: `${C}/03. Social Media/Main grid 2.png`, w: 2200 },

@@ -14,9 +14,9 @@
   },
   "la-isla/hero": {
    "src": "/work/la-isla/hero.webp",
-   "width": 1085,
-   "height": 1326,
-   "blur": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCoAAAABL6CgbRuGP+HeHRoREY/sB4YBqEkhgxCGkML8de4VQUT/J8D4wuwdda9WUDggkAAAAJAEAJ0BKg4AEQA+7WKpTamlo6IwCAEwHYlsAJ0yhHAb/+I3wPCtW3fekMCiAAD+wby63sT+HQ6dHS+IkeTbW4MgTwlshT/ttZL63vtUli/V8bSk2BbAmx0Vl1pe6aTOosOH0z5/x9L9euW8mFL4jDJp0pVJunhSVDHXr1I8CowvwBug3ZhFskD9e4T3c0AAAA=="
+   "width": 2000,
+   "height": 2485,
+   "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCYAAAABHyAWTPzdutOZRkSEDEWNpDB0MEh44V9KUxDR/1kACphltb42AFZQOCCKAAAAkAQAnQEqDgARAD7tYqlNqaWjojAIATAdiWgAnTKEcB9WwELT/vhgWkr9FTrgAP7qFNV6v5QN4C/lMIzXGsyDJnRt96DUoG0/GvD9GstwcE+LcN5yl/sfUA2d3xQqriM6jZR3TYgpX17IMJYe3wVUYJcQhvFI3NDOS9G7zT/BRcRqP7aBLYsc7cAA"
   },
   "doh/hero": {
    "src": "/work/doh/hero.webp",
