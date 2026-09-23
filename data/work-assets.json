@@ -270,12 +270,6 @@
    "height": 1920,
    "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABwAwCdASoOABkAPu1iqk2ppaQiMAgBMB2JQAALdfEPbG13phAA/vKqndG8it7IQx4HBmGOgZE83PXvRVdh3Nb+w9q58mfTzBxyP/ftAomM4D9ZdgqsuBrSvZmqU7UjrUwY2Mr2/MBQLiR0AAA="
   },
-  "la-isla/hero": {
-   "src": "/work/la-isla/hero.webp",
-   "width": 2000,
-   "height": 2485,
-   "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCYAAAABHyAWTPzdutOZRkSEDEWNpDB0MEh44V9KUxDR/1kACphltb42AFZQOCCKAAAAkAQAnQEqDgARAD7tYqlNqaWjojAIATAdiWgAnTKEcB9WwELT/vhgWkr9FTrgAP7qFNV6v5QN4C/lMIzXGsyDJnRt96DUoG0/GvD9GstwcE+LcN5yl/sfUA2d3xQqriM6jZR3TYgpX17IMJYe3wVUYJcQhvFI3NDOS9G7zT/BRcRqP7aBLYsc7cAA"
-  },
   "la-isla/crop-tequila": {
    "src": "/work/la-isla/crop-tequila.webp",
    "width": 1080,
@@ -677,6 +671,12 @@
    "width": 2200,
    "height": 1818,
    "blur": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4WAoAAAAQAAAADQAACwAAQUxQSDwAAAABV6CobRuIP9l257MKjYgIKAR5AjaRbbU6RCGZ/lZ0SMIDTr7WKCGi/wGRBT/NPaepI0kjXSlBYMNL/ANWUDggZgAAADACAJ0BKg4ADAADgFolsAJ0AR5yPS648VAAAP6DYfOrKSpJ9Y4fr2eoVSc75TfiQrts5QxDkJlUYjdWiJP1Z9LddlLkk7xZSbhy9wFtFvDBxV0L1taJd5unVR20uknDZRMaSQAAAA=="
+  },
+  "la-isla/grid-hero": {
+   "src": "/work/la-isla/grid-hero.webp",
+   "width": 2000,
+   "height": 2485,
+   "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCYAAAABHyAWTPzdutOZRkSEDEWNpDB0MEh44V9KUxDR/1kACphltb42AFZQOCCKAAAAkAQAnQEqDgARAD7tYqlNqaWjojAIATAdiWgAnTKEcB9WwELT/vhgWkr9FTrgAP7qFNV6v5QN4C/lMIzXGsyDJnRt96DUoG0/GvD9GstwcE+LcN5yl/sfUA2d3xQqriM6jZR3TYgpX17IMJYe3wVUYJcQhvFI3NDOS9G7zT/BRcRqP7aBLYsc7cAA"
   }
  },
  "videos": {

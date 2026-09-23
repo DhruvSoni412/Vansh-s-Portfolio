@@ -120,7 +120,7 @@ const IMAGES = {
   // the full-size "Grid View" export from 01. Hero — the older "La Isla Grid 3.webp" was a 1610x2000 re-save whose
   // bottom row was clipped ~6% short of a full cell. At 0.805:1 it is within half a percent of the card's 4:5 box,
   // so object-cover trims almost nothing, and it stands on its own at natural ratio in the portrait hero slot.
-  "la-isla/hero": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
+  "la-isla/grid-hero": { file: `${L}/01. Hero/Grid View La Isla.png`, w: 2000 },
   // The six-cell "everyday brand" grid, from the clean export (the V3 file of the same artwork carries
   // "Reel Thumbnail" placeholder labels). Filed under 02. Clayoven in the source folders, but it is La Isla work.
   "la-isla/grid-everyday": { file: `${C}/03. Social Media/Main grid 2.png`, w: 2200 },
@@ -336,7 +336,7 @@ function buildPreview(name, spec) {
 
 // Cards on Home and /work only need these few entries, so they get their own small file
 // (keeps the full manifest out of the client bundle).
-const COVER_KEYS = ["basil/cover", "clayoven/hero", "la-isla/hero", "doh/hero", "rbh/cover", "reels/cover", "ai/cover", "personal/cover"];
+const COVER_KEYS = ["basil/cover", "clayoven/hero", "la-isla/grid-hero", "doh/hero", "rbh/cover", "reels/cover", "ai/cover", "personal/cover"];
 
 function save() {
   fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1) + "\n");

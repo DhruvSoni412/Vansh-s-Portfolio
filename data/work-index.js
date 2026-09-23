@@ -63,7 +63,7 @@ export const projects = [
     descriptor: "Building a visual language for a hospitality brand across everyday content, seasonal campaigns and experiences.",
     categories: ["Campaigns & Content"],
     featured: true,
-    cover: cover("la-isla/hero", "La Isla Instagram grid: interiors, cocktails, table settings and dining moments"),
+    cover: cover("la-isla/grid-hero", "La Isla Instagram grid: interiors, cocktails, table settings and dining moments"),
     previewVideo: null,
   },
   {
