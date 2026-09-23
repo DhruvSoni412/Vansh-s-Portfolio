@@ -512,9 +512,9 @@
   },
   "personal/cover": {
    "src": "/work/personal/cover.webp",
-   "width": 683,
-   "height": 854,
-   "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoOABIAPu1iqU2ppaQiMAgBMB2JZQDImCL87ba0EtrJ98KJHAD8KUCj3YE2RFHzF2fo0+CbsI3SHcSAHNqRot5/+rwa6LH5gz3SOKtnbN7XtyVzqyhdnr1j02VLqC7/vRkNo7o+1mpMSgSLDRomioAA"
+   "width": 1000,
+   "height": 1250,
+   "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JbACdMoRwABhXn6YXzoyWYxgA/uYU5q3emV+/L/Lm57GivKro06bXBQKJVO5VxWTxsFXf2C/2K+PRrgUviHA97B8xnUyC8S0JYFvgbUR0SC2rhmXjfyYdPsEfsKvh86Ukuk04YMECUJOZNut37Rxo0/rmcAAA"
   },
   "personal/exp-tealogy-store": {
    "src": "/work/personal/exp-tealogy-store.webp",

@@ -20,8 +20,9 @@ html[data-theme="light"] .shadow-2xl { box-shadow: 0 24px 70px rgb(17 18 20 / .1
 
 /* Chrome keeps a transitioning `color`/`background-color` pinned to its old
    value when the var() it resolves from changes, so every element carrying a
-   `transition` utility stayed painted in the outgoing theme after a toggle.
-   Switching with transitions off makes the new values land immediately. */
+   `transition` utility stayed painted in the outgoing theme after the device
+   theme changed. The inline script in app/layout.js adds this class around the
+   switch so the new values land immediately. */
 html.theme-switching,
 html.theme-switching *,
 html.theme-switching *::before,

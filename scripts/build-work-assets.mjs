@@ -179,10 +179,11 @@ const IMAGES = {
   "personal/deadpool": { file: `${P}/deadpool.jpg`, w: 1440 },
   "personal/johnwick": { file: `${P}/jnwck.jpg`, w: 1440 },
   "personal/lowpoly": { file: `${P}/Low Poly Art.png`, w: 683 },
-  // Card cover for "Just Because". The two movie posters are 2:3 and both carry a lorem-ipsum strip along the bottom,
-  // so neither survives a 4:5 card crop cleanly; the low-poly piece is 0.683:1 with real credits, and trimming its
-  // bottom 15% lands on 4:5 exactly while keeping the face and the JOKER title whole.
-  "personal/cover": { file: `${P}/Low Poly Art.png`, w: 1000, crop: { x: 0, y: 0.046, w: 1, h: 0.854 } },
+  // Card cover for "Just Because". The card is 4:5 and this poster is 0.76:1, so it cannot reach 4:5 on height alone:
+  // the lorem-ipsum strip starts at y .944, and a full-width 4:5 window is taller than the artwork above it. Cutting
+  // the bottom at .938 and taking ~9px off each side (flat red/yellow margin) lands on 4:5 exactly, keeping the
+  // Marvel lockup, both faces and the whole DEADPOOL / WOLVERINE title, with the lorem copy out of frame.
+  "personal/cover": { file: `${P}/deadpool.jpg`, w: 1000, crop: { x: 0.00625, y: 0, w: 0.98681, h: 0.9377 } },
   "personal/exp-tealogy-store": { file: `${P}/Sm posts/Place Holder 02y.png`, w: 1080 },
   "personal/exp-tealogy-chai": { file: `${P}/Sm posts/Place Holder 3.png`, w: 1080 },
   "personal/exp-sugarroom": { file: `${P}/Sm posts/Place Holder 5.png`, w: 1080 },
