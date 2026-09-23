@@ -492,12 +492,6 @@
    "height": 1000,
    "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoOABQAPu1iqk2ppaQiMAgBMB2JYwAD5Mno1WOUoqT/GgAA4nGAt1HHNsNaH5PXpZSPj5VwGPzIUJSCBllOIGfOGaoIC6vmFqrwr5o8UUvOYFetq5+kPba3XHyMO7Dc9gQQ/2gMum8HZYX2DkrXwazId1ah0HVoAAA="
   },
-  "personal/cover": {
-   "src": "/work/personal/cover.webp",
-   "width": 1000,
-   "height": 1250,
-   "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JbACdMoRwABhXn6YXzoyWYxgA/uYU5q3emV+/L/Lm57GivKro06bXBQKJVO5VxWTxsFXf2C/2K+PRrgUviHA97B8xnUyC8S0JYFvgbUR0SC2rhmXjfyYdPsEfsKvh86Ukuk04YMECUJOZNut37Rxo0/rmcAAA"
-  },
   "personal/exp-tealogy-store": {
    "src": "/work/personal/exp-tealogy-store.webp",
    "width": 1080,
@@ -677,6 +671,12 @@
    "width": 1800,
    "height": 2224,
    "blur": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4WAoAAAAQAAAADQAAEAAAQUxQSCgAAAABHyCmIXObXJr4RUQkQ2kkKYwn9m9RDA2iGGSqIKL/s9CVOgs3eG0KVlA4IIAAAADwAwCdASoOABEAPu1iqU2ppaOiMAgBMB2JYgCdMoACrgrWwJ4jSHKAAP68hXsYfpWBsYQQmapS9WYTD46FCQrDOdmRylQULDDahgkBsu5pWiHaOxiP9ChO7BajOlAFUE11iAQy5HLcjxdsgi4ZMpAr/MojKcMd0X4F+8gOO0AAAA=="
+  },
+  "personal/deadpool-cover": {
+   "src": "/work/personal/deadpool-cover.webp",
+   "width": 1000,
+   "height": 1250,
+   "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoOABIAPu1iqU2ppaOiMAgBMB2JbACdMoRwABhXn6YXzoyWYxgA/uYU5q3emV+/L/Lm57GivKro06bXBQKJVO5VxWTxsFXf2C/2K+PRrgUviHA97B8xnUyC8S0JYFvgbUR0SC2rhmXjfyYdPsEfsKvh86Ukuk04YMECUJOZNut37Rxo0/rmcAAA"
   }
  },
  "videos": {

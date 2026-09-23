@@ -27,7 +27,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const project = getWorkProject(slug);
-  return project ? { title: project.title, description: project.descriptor } : {};
+  if (!project) return {};
+  const title = `${project.title} · Vansh Bajaj`;
+  return {
+    title: project.title,
+    description: project.descriptor,
+    openGraph: { title, description: project.descriptor, type: "article", url: `/work/${slug}` },
+    twitter: { card: "summary_large_image", title, description: project.descriptor },
+  };
 }
 
 export default async function ProjectRoute({ params }) {

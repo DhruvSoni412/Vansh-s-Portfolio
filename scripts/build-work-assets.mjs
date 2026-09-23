@@ -179,7 +179,7 @@ const IMAGES = {
   // the lorem-ipsum strip starts at y .944, and a full-width 4:5 window is taller than the artwork above it. Cutting
   // the bottom at .938 and taking ~9px off each side (flat red/yellow margin) lands on 4:5 exactly, keeping the
   // Marvel lockup, both faces and the whole DEADPOOL / WOLVERINE title, with the lorem copy out of frame.
-  "personal/cover": { file: `${P}/deadpool.jpg`, w: 1000, crop: { x: 0.00625, y: 0, w: 0.98681, h: 0.9377 } },
+  "personal/deadpool-cover": { file: `${P}/deadpool.jpg`, w: 1000, crop: { x: 0.00625, y: 0, w: 0.98681, h: 0.9377 } },
   "personal/exp-tealogy-store": { file: `${P}/Sm posts/Place Holder 02y.png`, w: 1080 },
   "personal/exp-tealogy-chai": { file: `${P}/Sm posts/Place Holder 3.png`, w: 1080 },
   "personal/exp-sugarroom": { file: `${P}/Sm posts/Place Holder 5.png`, w: 1080 },
@@ -336,7 +336,7 @@ function buildPreview(name, spec) {
 
 // Cards on Home and /work only need these few entries, so they get their own small file
 // (keeps the full manifest out of the client bundle).
-const COVER_KEYS = ["basil/cover", "clayoven/hero", "la-isla/grid-hero", "doh/hero", "rbh/cover", "reels/cover", "ai/cover", "personal/cover"];
+const COVER_KEYS = ["basil/cover", "clayoven/hero", "la-isla/grid-hero", "doh/hero", "rbh/cover", "reels/cover", "ai/cover", "personal/deadpool-cover"];
 
 function save() {
   fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1) + "\n");

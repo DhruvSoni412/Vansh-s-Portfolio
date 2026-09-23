@@ -123,7 +123,7 @@ export const projects = [
     descriptor: "Personal poster experiments and visual ideas made outside the brief.",
     categories: ["Personal"],
     featured: false,
-    cover: cover("personal/cover", "Fan-made Deadpool & Wolverine poster"),
+    cover: cover("personal/deadpool-cover", "Fan-made Deadpool & Wolverine poster"),
     previewVideo: null,
   },
 ].map((project, index) => ({ ...project, number: String(index + 1).padStart(2, "0") }));
